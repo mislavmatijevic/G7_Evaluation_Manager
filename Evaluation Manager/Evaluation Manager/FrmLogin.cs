@@ -22,11 +22,12 @@ namespace Evaluation_Manager
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            if (username == "teacher" &&  password == "test")
+            if (username == "teacher" && password == "test")
             {
                 FrmStudents frmStudents = new FrmStudents();
                 Hide();
                 frmStudents.ShowDialog();
+
                 Close();
             }
             else
