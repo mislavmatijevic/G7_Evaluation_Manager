@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +34,8 @@ namespace Evaluation_Manager
 
             LoggedTeacher = TeacherRepository.GetTeacher(username);
 
-            if(LoggedTeacher != null && LoggedTeacher.Password == password)
+
+            if(LoggedTeacher != null && LoggedTeacher.CheckPassword(password))
             {
                 FrmStudents frmStudents = new FrmStudents();
                 Hide();
